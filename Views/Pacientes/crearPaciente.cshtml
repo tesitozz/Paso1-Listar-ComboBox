@@ -1,0 +1,87 @@
+﻿@model DSWI_CL1_Sanchez_David_Aaron.Models.Pacientes
+
+@{
+    ViewData["Title"] = "crearPaciente";
+}
+
+<h1>crearPaciente</h1>
+
+<h4>Pacientes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="crearPaciente">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodPaciente" class="control-label"></label>
+                <input asp-for="CodPaciente" class="form-control" />
+                <span asp-validation-for="CodPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApePaterno" class="control-label"></label>
+                <input asp-for="ApePaterno" class="form-control" />
+                <span asp-validation-for="ApePaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApaMaterno" class="control-label"></label>
+                <input asp-for="ApaMaterno" class="form-control" />
+                <span asp-validation-for="ApaMaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodTipoDocumento" class="control-label"></label>
+                   <select asp-for="CodTipoDocumento" class="form-control" asp-items="ViewBag.listaDocumentos">
+                        <option value="">Seleccione un Documento</option>
+                    </select>
+                <span asp-validation-for="CodTipoDocumento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodiDistrito" class="control-label"></label>
+               <select asp-for="CodiDistrito" class="form-control" asp-items="ViewBag.listaDistritos">
+                        <option value="">Seleccione un Distrito</option>
+                    </select>
+                <span asp-validation-for="CodiDistrito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoRegistro" class="control-label"></label>
+                <input asp-for="EstadoRegistro" class="form-control" />
+                <span asp-validation-for="EstadoRegistro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesTipoDocumento" class="control-label"></label>
+                <input asp-for="DesTipoDocumento" class="form-control" />
+                <span asp-validation-for="DesTipoDocumento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
